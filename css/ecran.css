@@ -1,0 +1,38 @@
+#container{
+
+}
+#diaporama{
+	width: 500px;
+	height: 350px;
+	overflow: hidden;
+}
+.slideselector{
+	position: absolute;
+}
+.carouselcontainer{
+	position: relative;
+}
+.navigation{
+	z-index: 1000;
+	width:auto;
+	height: 20px;
+	position: absolute;
+	bottom: 5px;
+	right: 5px;
+	
+	
+}
+.navigation span{
+	display: inline-block;
+	height: 20px;
+	line-height:20px;
+	width: 10px;
+	background-color: #532f06;
+	color: white;
+	cursor: pointer;
+	margin: 0 2px;
+	padding: 0 3px;;
+}
+.navigation span:hover,.navigation span.active{
+	background-color: #C6700F;
+}
