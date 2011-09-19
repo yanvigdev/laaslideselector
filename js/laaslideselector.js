@@ -7,21 +7,21 @@ var defil;
 var largeur;
 function slideselect() {
 	nbSlide=$("#diaporama").find("img").length;
-	$("#diaporama").addClass('carouselcontainer');
-	$(".carouselcontainer").find("img").each( function(index) {
+	$("#diaporama").addClass('slideselectorcontainer');
+	$(".slideselectorcontainer").find("img").each( function(index) {
 				$(this).addClass('slideselector');
 				$(this).attr('id', 'slideselector'+(index+1));
 			});
 	
-	largeur = $(".carouselcontainer").width()
+	largeur = $(".slideselectorcontainer").width()
 	
 	
 	
 	$(".slideselector").css({'left':'-'+largeur+'px'});
 	preidEnCour=nbSlide;
-	$(".carouselcontainer").append('<div class="navigation"></div>');
+	$(".slideselectorcontainer").append('<div class="slideselectornavigation"></div>');
 	for(var i=1;i<=nbSlide;i++) {
-		$(".navigation").append("<span id=\"nav"+i+"\" onclick=\"changeUneClic("+i+")\">"+i+"</span>");
+		$(".slideselectornavigation").append("<span id=\"nav"+i+"\" onclick=\"changeUneClic("+i+")\">"+i+"</span>");
 	};
 	//$(".navigation").css({'width':14*nbSlide})
 	changeSlide(idEnCour);
@@ -31,9 +31,9 @@ function changeSlide(idEnCour) {
 /*	$("#slide_titre"+preidEnCour).animate({
 		"line-height":0
 	},900);*/
-	$("#slideselector"+preidEnCour).animate({'left':largeur+'px'},500);
+	$("#slideselector"+preidEnCour).stop(true,true).animate({'left':largeur+'px'},500);
 
-	$("#slideselector"+idEnCour).css({'left':'-'+largeur+'px'}).animate({'left':0},500);
+	$("#slideselector"+idEnCour).stop(true,true).css({'left':'-'+largeur+'px'}).animate({'left':0},500);
 	/*$("#slide_titre"+idEnCour).css("line-height",0);*/
 	/*setTimeout("titreDown("+idEnCour+")",300);*/
 	$("#nav"+preidEnCour).removeClass("active");

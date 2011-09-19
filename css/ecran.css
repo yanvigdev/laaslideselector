@@ -9,10 +9,10 @@
 .slideselector{
 	position: absolute;
 }
-.carouselcontainer{
+.slideselectorcontainer{
 	position: relative;
 }
-.navigation{
+.slideselectornavigation{
 	z-index: 1000;
 	width:auto;
 	height: 20px;
@@ -22,7 +22,7 @@
 	
 	
 }
-.navigation span{
+.slideselectornavigation span{
 	display: inline-block;
 	height: 20px;
 	line-height:20px;
@@ -33,6 +33,6 @@
 	margin: 0 2px;
 	padding: 0 3px;;
 }
-.navigation span:hover,.navigation span.active{
+.slideselectornavigation span:hover,.slideselectornavigation span.active{
 	background-color: #C6700F;
 }
